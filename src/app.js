@@ -8,6 +8,10 @@ const app = express();
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('<h1>Render Services Explorer is Up and Running!</h1><p>To see your services, go to <a href="/services">/services</a></p>');
+});
+
 app.use('/services', serviceRoutes);
 
 // 404 Handler
